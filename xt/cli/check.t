@@ -13,6 +13,8 @@ EOF
     like $app->stderr, qr/find carton\.lock/;
 
     $app->run("install");
+    use Data::Dumper;
+    warn Dumper $app;
 
     $app->run("check");
     like $app->stdout, qr/are satisfied/;
